@@ -1,0 +1,31 @@
+method	metric	percent
+AlphaFold 3	fail_root	0
+AlphaFold 3	fail_internal	0
+AlphaFold 3	fail_sugar_stereo	4.5580732
+AlphaFold 3	fail_clash	17.546072
+AlphaFold 3	fail_sugar_stereo_and_clash	1.5388655
+Boltz-2	fail_root	0
+Boltz-2	fail_internal	0
+Boltz-2	fail_sugar_stereo	0
+Boltz-2	fail_clash	16.599428
+Boltz-2	fail_sugar_stereo_and_clash	0
+Chai-1	fail_root	0.35230352
+Chai-1	fail_internal	0
+Chai-1	fail_sugar_stereo	3.9869661
+Chai-1	fail_clash	12.842544
+Chai-1	fail_sugar_stereo_and_clash	0.72880372
+Protenix	fail_root	1.3580247
+Protenix	fail_internal	0
+Protenix	fail_sugar_stereo	6.4431054
+Protenix	fail_clash	11.938076
+Protenix	fail_sugar_stereo_and_clash	1.0105167
+RFAA	fail_root	0.43174217
+RFAA	fail_internal	2.3495828
+RFAA	fail_sugar_stereo	21.193752
+RFAA	fail_clash	73.795956
+RFAA	fail_sugar_stereo_and_clash	19.062658
+SweetFold	fail_root	0
+SweetFold	fail_internal	0
+SweetFold	fail_sugar_stereo	1.4632891
+SweetFold	fail_clash	30.292449
+SweetFold	fail_sugar_stereo_and_clash	1.0045309

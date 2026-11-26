@@ -1,29 +1,39 @@
-"""Render one statistical panel or every statistical panel in the paper."""
+"""Draw one statistical panel, or all panels in the glycoprotein benchmark."""
 import argparse
-import subprocess
-import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
-sys.dont_write_bytecode = True
-from scripts.test_set_panel import render
+import matplotlib
 
-PANELS = ("1B", "2A", "2B", "2C", "3A", "3B", "3C", "3D", "4A", "4B", "4C",
-          "5A", "5B", "5C", "5D", "S1A", "S1B")
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
+from plotting.figure1 import test_set_panel
+from plotting.panels import PANELS, render_panel
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("panel", type=str.upper, choices=(*PANELS, "ALL"))
-    parser.add_argument("--out-dir", type=Path, default=ROOT / "build/figures")
+    labels = ("1B", *PANELS)
+    parser.add_argument("panel", type=str.upper, choices=(*labels, "ALL"))
+    parser.add_argument("--out-dir", type=Path, default=Path("build/figures"))
+    parser.add_argument("--dpi", type=int, help="PNG resolution (default 400 for 1B, 500 otherwise)")
     args = parser.parse_args()
-    output = args.out_dir.resolve()
-    if args.panel in ("1B", "ALL"):
-        render(output)
-    if args.panel != "1B":
-        choice = "all" if args.panel == "ALL" else args.panel
-        subprocess.run([sys.executable, "-B", str(ROOT / "plotting/plot.py"), choice,
-                        "--out-dir", str(output)], check=True)
+    if args.dpi is not None and args.dpi <= 0:
+        parser.error("--dpi must be positive")
+    args.out_dir.mkdir(parents=True, exist_ok=True)
+    for label in labels if args.panel == "ALL" else (args.panel,):
+        if label == "1B":
+            plt.rcdefaults()
+            figure = test_set_panel()
+        else:
+            figure = render_panel(label)
+        try:
+            stem = args.out_dir / f"Fig{label}"
+            figure.savefig(stem.with_suffix(".pdf"))
+            figure.savefig(stem.with_suffix(".png"), dpi=args.dpi or (400 if label == "1B" else 500))
+            print(stem)
+        finally:
+            plt.close(figure)
 
 
 if __name__ == "__main__":

@@ -3,7 +3,7 @@
 import numpy as np
 from matplotlib.lines import Line2D
 from matplotlib.ticker import NullLocator
-from style import METHODS, COLORS, GRID, INK, panel
+from .style import METHODS, COLORS, GRID, INK, panel
 
 LABELS = list(METHODS.values())
 C = dict(zip(LABELS, COLORS.values()))
@@ -23,25 +23,24 @@ def styl(ax, grid=None):
         ax.grid(axis=grid, color=GRID, lw=0.54)
 
 
-def a(df):
+def a(lens):
     f = panel("A", TITLES["A"])
     ax = f.add_axes([0.148, 0.328, 0.816, 0.393])
     counts = f.add_axes([0.148, 0.161, 0.816, 0.107])
-    lens = df
     ax.set(xlim=(0.5, 16.6), ylim=(0, 8.7), yticks=[0, 2, 4, 6, 8], ylabel="Glycan-fit RMSD (Å)")
     ax.tick_params(axis="x", bottom=False, labelbottom=False)
     styl(ax, "y")
     entries = []
     for i, m in enumerate(LABELS):
-        d = lens[lens.method.eq(m)].sort_values("stratum")
+        d = lens[lens.method.eq(m)].sort_values("length")
         common = d[d.n_sites >= 10]
         rare = d[d.n_sites < 10]
-        x = common.stratum.to_numpy(dtype=float)
-        y = common.value.to_numpy(dtype=float)
+        x = common.length.to_numpy(dtype=float)
+        y = common.glycan_RMSD_A.to_numpy(dtype=float)
         spec = dict(marker=MARKERS[i], ms=4.25, mfc=C[m], mec="white", mew=0.34, color=C[m])
         ax.plot(x, y, lw=1.18, **spec)
-        xx = rare.stratum.to_numpy(dtype=float) + (i - 2.5) * 0.083
-        ax.plot(xx, rare.value, ls="none", **spec)
+        xx = rare.length.to_numpy(dtype=float) + (i - 2.5) * 0.083
+        ax.plot(xx, rare.glycan_RMSD_A, ls="none", **spec)
         entries.append(Line2D([], [], lw=1.08, **spec, label=m))
     f.legend(
         handles=entries,
@@ -54,8 +53,8 @@ def a(df):
         handletextpad=0.42,
         labelspacing=0.34,
     )
-    d = lens[lens.method.eq("AlphaFold 3")].sort_values("stratum")
-    xs = d.stratum.to_numpy(dtype=float)
+    d = lens[lens.method.eq("AlphaFold 3")].sort_values("length")
+    xs = d.length.to_numpy(dtype=float)
     ns = d.n_sites.to_numpy(dtype=float)
     counts.bar(xs, ns - 0.65, bottom=0.65, width=0.58, color="#9babae", zorder=2)
     counts.set(
@@ -77,14 +76,13 @@ def a(df):
     return f
 
 
-def b(df):
+def b(sub):
     f = panel("B", TITLES["B"])
-    sub = df
     for i, m in enumerate(LABELS):
-        data = sub[sub.method.eq(m)].sort_values("stratum")
+        data = sub[sub.method.eq(m)].sort_values("quartile")
         g = f.add_axes([0.145 + (i % 3) * 0.282, 0.536 - (i // 3) * 0.372, 0.231, 0.224])
-        x = data.stratum.to_numpy(dtype=float)
-        y = data.value.to_numpy(dtype=float)
+        x = data.quartile.to_numpy(dtype=float)
+        y = data.placement_RMSD_A.to_numpy(dtype=float)
         g.set(
             xlim=(0.65, 4.35),
             ylim=(0, 34.2),
@@ -98,7 +96,7 @@ def b(df):
             axis="y", labelleft=i % 3 == 0, labelsize=7.8, length=2.3 if i % 3 == 0 else 0
         )
         g.set_title(m, fontsize=9.4, color=C[m], weight="bold", pad=2.8)
-        g.vlines(x, data.ci_low, data.ci_high, color=C[m], lw=1.1, alpha=0.67)
+        g.vlines(x, data.ci95_low, data.ci95_high, color=C[m], lw=1.1, alpha=0.67)
         g.plot(x, y, color=C[m], marker="o", ms=4.0, mew=0.33, mec="white", mfc=C[m], lw=1.22)
 
     f.text(
@@ -114,9 +112,8 @@ def b(df):
     return f
 
 
-def c(df):
+def c(sub):
     f = panel("C", TITLES["C"])
-    sub = df
     ax = f.add_axes([0.222, 0.232, 0.737, 0.590])
     ax.set(
         yticks=range(6),
@@ -130,13 +127,13 @@ def c(df):
     ax.spines["left"].set_visible(False)
     ax.tick_params(axis="y", length=0, pad=4)
     desc = [
-        ("native_rmsd", "Native top rank", "o"),
-        ("mean5_rmsd", "Random choice", "D"),
-        ("best5_rmsd", "Reference best", "^"),
+        ("native_top1", "Native top rank", "o"),
+        ("random_expected", "Random choice", "D"),
+        ("full_candidate_oracle", "Reference best", "^"),
     ]
     for i, m in enumerate(LABELS):
-        d = sub[sub.method.eq(m)].set_index("metric")
-        sx = {key: d.loc[key, "value"] for key, _, _ in desc}
+        d = sub[sub.method.eq(m)].set_index("choice")
+        sx = {key: d.loc[key, "placement_RMSD_A"] for key, _, _ in desc}
         ax.plot([min(sx.values()), max(sx.values())], [i, i], color=C[m], lw=1.7, alpha=0.68)
         for dy, (key, name, marker) in zip([-0.121, 0.121, 0], desc):
             x = sx[key]
@@ -144,11 +141,11 @@ def c(df):
                 x,
                 i + dy,
                 marker=marker,
-                mfc="white" if key == "mean5_rmsd" else C[m],
+                mfc="white" if key == "random_expected" else C[m],
                 mec=C[m],
                 ls="none",
-                mew=1.0 if key == "mean5_rmsd" else 0.6,
-                ms=6.1 if key == "best5_rmsd" else 5.2,
+                mew=1.0 if key == "random_expected" else 0.6,
+                ms=6.1 if key == "full_candidate_oracle" else 5.2,
             )
     handles = [
         Line2D(
@@ -157,7 +154,7 @@ def c(df):
             marker=k,
             ls="none",
             ms=5.8,
-            mfc="white" if key == "mean5_rmsd" else INK,
+            mfc="white" if key == "random_expected" else INK,
             mec=INK,
             label=label,
         )
@@ -176,12 +173,10 @@ def c(df):
     return f
 
 
-def d(df, inputs):
+def d(df, scatter):
     f = panel("D", TITLES["D"])
     ax = f.add_axes([0.143, 0.237, 0.344, 0.504])
     corr = f.add_axes([0.705, 0.237, 0.249, 0.504])
-    scatter = inputs[inputs.method.eq("AlphaFold 3")].sort_values("case_id")
-    assert len(scatter) == 327
     for xy in [("x", (0.285, 73), [0.5, 1, 3, 10, 30]), ("y", (0.36, 115), [1, 3, 10, 30, 100])]:
         axis, limits, ticks = xy
         if axis == "x":
@@ -199,8 +194,8 @@ def d(df, inputs):
     ax.spines["bottom"].set_color("#7a9190")
     ax.spines["left"].set_color("#7a9190")
     ax.scatter(
-        scatter.dispersion_protein,
-        scatter.top1_rmsd,
+        scatter.candidate_spread_A,
+        scatter.placement_RMSD_A,
         s=10.8,
         c=C["AlphaFold 3"],
         alpha=0.43,
@@ -227,6 +222,6 @@ def d(df, inputs):
     v = df.set_index("method")
     for i, m in enumerate(LABELS):
         line = v.loc[m]
-        corr.hlines(i, line.ci_low, line.ci_high, color=C[m], lw=1.40)
-        corr.plot(line.value, i, marker="o", ms=5.3, mfc=C[m], mec="white", mew=0.42)
+        corr.hlines(i, line.ci95_low, line.ci95_high, color=C[m], lw=1.40)
+        corr.plot(line.partial_spearman_rho, i, marker="o", ms=5.3, mfc=C[m], mec="white", mew=0.42)
     return f

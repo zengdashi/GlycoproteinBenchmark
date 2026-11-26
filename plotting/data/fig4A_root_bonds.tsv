@@ -1,0 +1,13 @@
+test_set	method	total_sites	sites_outside_range
+A	AlphaFold 3	884	0
+B	AlphaFold 3	171	0
+A	Boltz-2	884	0
+B	Boltz-2	171	0
+A	Chai-1	884	3
+B	Chai-1	171	0
+A	Protenix	884	8
+B	Protenix	171	2
+A	RFAA	884	5
+B	RFAA	171	4
+A	SweetFold	884	0
+B	SweetFold	171	0

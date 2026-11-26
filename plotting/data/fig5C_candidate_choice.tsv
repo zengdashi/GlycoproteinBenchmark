@@ -1,0 +1,19 @@
+method	choice	placement_RMSD_A
+AlphaFold 3	native_top1	8.59922270734501
+AlphaFold 3	random_expected	8.440533272739538
+AlphaFold 3	full_candidate_oracle	6.723081246529709
+Boltz-2	native_top1	9.175510369171578
+Boltz-2	random_expected	9.393732059952557
+Boltz-2	full_candidate_oracle	7.611392498054575
+Protenix	native_top1	9.820843875442074
+Protenix	random_expected	9.952830090688249
+Protenix	full_candidate_oracle	8.107268059230575
+Chai-1	native_top1	8.592697914598187
+Chai-1	random_expected	8.764744919590528
+Chai-1	full_candidate_oracle	6.9306146592486995
+RFAA	native_top1	17.5881064709801
+RFAA	random_expected	18.34911788702577
+RFAA	full_candidate_oracle	16.085515166061928
+SweetFold	native_top1	12.675349617622055
+SweetFold	random_expected	12.627162109486617
+SweetFold	full_candidate_oracle	10.197117446190243

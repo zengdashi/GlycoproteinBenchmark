@@ -1,0 +1,25 @@
+method	outcome	percent
+AlphaFold 3	chem_pass_geo_pass	17.925535619
+AlphaFold 3	chem_pass_geo_fail	65.66278589
+AlphaFold 3	chem_fail_geo_pass	1.533203125
+AlphaFold 3	chem_fail_geo_fail	14.878475366
+Boltz-2	chem_pass_geo_pass	9.069920964
+Boltz-2	chem_pass_geo_fail	76.134679231
+Boltz-2	chem_fail_geo_pass	1.302333734
+Boltz-2	chem_fail_geo_fail	13.49306607
+Chai-1	chem_pass_geo_pass	12.187688939
+Chai-1	chem_pass_geo_fail	73.992858487
+Chai-1	chem_fail_geo_pass	1.097005208
+Chai-1	chem_fail_geo_fail	12.722447366
+Protenix	chem_pass_geo_pass	12.274439103
+Protenix	chem_pass_geo_fail	72.00617178
+Protenix	chem_fail_geo_pass	2.446289062
+Protenix	chem_fail_geo_fail	13.273100055
+RFAA	chem_pass_geo_pass	2.106119792
+RFAA	chem_pass_geo_fail	23.346509177
+RFAA	chem_fail_geo_pass	0.908203125
+RFAA	chem_fail_geo_fail	73.639167907
+SweetFold	chem_pass_geo_pass	6.58734809
+SweetFold	chem_pass_geo_fail	64.376895349
+SweetFold	chem_fail_geo_pass	1.975911458
+SweetFold	chem_fail_geo_fail	27.059845103

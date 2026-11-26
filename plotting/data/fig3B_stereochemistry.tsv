@@ -1,0 +1,19 @@
+method	metric	percent
+AlphaFold 3	anomer_correct	99.027244
+AlphaFold 3	ring_agreement	90.71895394
+AlphaFold 3	chemical_extended_local_pass_fraction	83.58832151
+Boltz-2	anomer_correct	100
+Boltz-2	ring_agreement	80.46946176
+Boltz-2	chemical_extended_local_pass_fraction	85.2046002
+Chai-1	anomer_correct	98.094537
+Chai-1	ring_agreement	91.04400974
+Chai-1	chemical_extended_local_pass_fraction	86.18054743
+Protenix	anomer_correct	98.816403
+Protenix	ring_agreement	90.99006629
+Protenix	chemical_extended_local_pass_fraction	84.28061088
+RFAA	anomer_correct	94.429668
+RFAA	ring_agreement	78.44382201
+RFAA	chemical_extended_local_pass_fraction	25.45262897
+SweetFold	anomer_correct	99.335631
+SweetFold	ring_agreement	90.80482065
+SweetFold	chemical_extended_local_pass_fraction	70.96424344

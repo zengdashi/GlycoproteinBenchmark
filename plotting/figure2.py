@@ -5,15 +5,12 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import to_rgb, to_hex
 from matplotlib.lines import Line2D
 from matplotlib.ticker import NullLocator
-from style import METHODS, COLORS
+from .style import METHODS, COLORS
 
-M = list(METHODS)
 N = list(METHODS.values())
 C = list(COLORS.values())
 INK = "#24363b"
 GRID = "#e0e6e5"
-GRAY = "#727e80"
-TEAL = "#147c76"
 OCHRE = "#a65e35"
 SIZE = (5.1, 3.8)
 GLYCAN_ALIGNMENT = "Glycan heavy-atom alignment"
@@ -52,9 +49,12 @@ def tidy(ax, grid_axis=None):
 
 def backbone(data):
     f = panel("A", "Protein backbone accuracy")
-    means = {
-        cohort: rows.set_index("method").reindex(N) for cohort, rows in data.groupby("test_set")
-    }
+    # Each distinct protein sequence receives the same total weight.
+    metrics = ["protein_CA_RMSD_A", "protein_CA_lDDT"]
+    means = {}
+    for cohort, subset in (("A", data), ("B", data[data.in_set_b])):
+        by_sequence = subset.groupby(["method", "sequence"])[metrics].mean()
+        means[cohort] = by_sequence.groupby("method").mean().reindex(N)
     for index, (metric, label, x, ticks) in enumerate(
         [
             ("protein_CA_RMSD_A", "Cα RMSD (Å)", 0.20, [4, 8, 12]),
@@ -110,12 +110,12 @@ def backbone(data):
 
 def frames(data):
     f = panel("B", "Glycan RMSD by alignment frame")
-    by_seq = data.groupby(["method", "sequence_id"])[[rmsd_column(k) for k, _ in FRAMES]].mean()
+    by_seq = data.groupby(["method", "sequence"])[[rmsd_column(k) for k, _ in FRAMES]].mean()
     for i, (frame, title) in enumerate(FRAMES):
         col, row = i % 2, i // 2
         ax = f.add_axes([0.175 + col * 0.422, 0.536 - row * 0.363, 0.363, 0.242])
         ax.set_title(title, loc="left", fontsize=8.5, fontweight="bold", pad=3)
-        for j, (method, color) in enumerate(zip(M, C)):
+        for j, (method, color) in enumerate(zip(N, C)):
             vals = by_seq.loc[method, rmsd_column(frame)].to_numpy()
             q5, q25, med, q75, q95 = np.quantile(vals, [0.05, 0.25, 0.50, 0.75, 0.95])
             stat = dict(
@@ -172,13 +172,36 @@ def frames(data):
     return f
 
 
-def assoc_panel(data, stats):
+def weighted_midrank(values, weights):
+    _, inverse = np.unique(values, return_inverse=True)
+    mass = np.bincount(inverse, weights=weights)
+    return (mass.cumsum() - 0.5 * mass)[inverse] / weights.sum()
+
+
+def association(data):
+    x = data.protein_CA_lDDT.to_numpy()
+    y = data[rmsd_column("site")].to_numpy()
+    weights = 1.0 / data.groupby("sequence").protein_CA_lDDT.transform("size").to_numpy()
+    root_weights = np.sqrt(weights)
+    design = np.column_stack([np.ones(len(x)), x]) * root_weights[:, None]
+    intercept, slope = np.linalg.lstsq(design, np.log(y) * root_weights, rcond=None)[0]
+    order = np.argsort(x, kind="stable")
+    bounds = np.searchsorted(weights[order].cumsum(), np.array([0.025, 0.975]) * weights.sum())
+    x_range = x[order][bounds]
+
+    ranks = np.vstack([weighted_midrank(x, weights), weighted_midrank(y, weights)])
+    covariance = np.cov(ranks, aweights=weights, ddof=0)
+    rho = covariance[0, 1] / np.sqrt(covariance[0, 0] * covariance[1, 1])
+    return x_range, np.exp(intercept + x_range * slope), rho
+
+
+def assoc_panel(data):
     f = panel("C", "Backbone accuracy and glycan placement")
-    for i, (method, name, color) in enumerate(zip(M, N, C)):
+    for i, (name, color) in enumerate(zip(N, C)):
         col, row = i % 3, i // 3
         ax = f.add_axes([0.139 + col * 0.283, 0.537 - row * 0.341, 0.241, 0.233])
-        q = data[data.method == method]
-        s = stats[(stats.test_set == "A") & (stats.method == name)].iloc[0]
+        q = data[data.method == name]
+        xx, yy, rho = association(q)
         ax.scatter(
             q.protein_CA_lDDT,
             q[rmsd_column("site")],
@@ -190,8 +213,6 @@ def assoc_panel(data, stats):
         )
         ax.axhline(5, color="#68777b", ls=(0, (1.2, 2.3)), lw=0.65, zorder=0)
         ax.axvline(0.9, color="#68777b", ls=(0, (1.2, 2.3)), lw=0.65, zorder=0)
-        xx = np.array([s.trend_xmin, s.trend_xmax])
-        yy = np.exp(s.log_rmsd_intercept + xx * s.log_rmsd_slope_per_lddt)
         ax.plot(xx, yy, color="white", lw=2.4, zorder=2, solid_capstyle="round")
         ax.plot(xx, yy, color=INK, lw=1.4, zorder=3, solid_capstyle="round")
         ax.set_yscale("log")
@@ -205,7 +226,7 @@ def assoc_panel(data, stats):
         )
         ax.yaxis.set_minor_locator(NullLocator())
         ax.set_title(METHOD_LABELS[i], fontsize=8.8, weight="bold", color=INK, pad=13.2)
-        coefficient = f"ρ = {s.weighted_spearman_rho:.2f}".replace("-", "−")
+        coefficient = f"ρ = {rho:.2f}".replace("-", "−")
         ax.text(
             0.5,
             1.025,

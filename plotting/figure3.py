@@ -3,7 +3,7 @@
 import numpy as np
 from matplotlib.lines import Line2D
 from matplotlib.ticker import NullLocator
-from style import METHODS, COLORS, INK, GRID, panel, style
+from .style import METHODS, COLORS, INK, GRID, panel, style
 
 SUPP_SIZE = (5.1, 5.1)
 LINKS = {
@@ -16,9 +16,8 @@ D_METHODS = ["af3", "sweetfold"]
 
 def panel_a(summary):
     f = panel("A", "Covalent bond lengths")
-    rows = summary[summary.metric.isin(["root_supported", "internal_supported", "tree_supported"])]
-    values = rows.set_index(["method", "metric"]).value
-    counts = rows[["metric", "n"]].drop_duplicates().set_index("metric").n
+    values = summary.set_index(["method", "metric"]).percent
+    counts = summary[["metric", "n"]].drop_duplicates().set_index("metric").n
     bonds = f.add_axes([0.206, 0.26, 0.326, 0.49])
     glycans = f.add_axes([0.634, 0.26, 0.326, 0.49])
     bonds.set_title("Per bond", fontsize=10.4, weight="bold", pad=7)
@@ -108,15 +107,7 @@ def panel_a(summary):
 def panel_b(summary):
     f = panel("B", "Stereochemistry and ring conformation")
     ax = f.add_axes([0.205, 0.205, 0.76, 0.59])
-    data = (
-        summary[
-            summary.metric.isin(
-                ["anomer_correct", "ring_agreement", "chemical_extended_local_pass_fraction"]
-            )
-        ]
-        .set_index(["method", "metric"])
-        .value
-    )
+    data = summary.set_index(["method", "metric"]).percent
     cols = [
         ("anomer_correct", "Anomeric\nconfiguration", "#2f716e"),
         ("ring_agreement", "Ring class\nagreement", "#598bab"),
@@ -146,16 +137,12 @@ def panel_b(summary):
 
 def panel_c(summary):
     f = panel("C", "Protein–sugar attachment angles")
-    data = (
-        summary[summary.metric == "attachment_valence_angle"]
-        .set_index(["subset", "method", "statistic"])
-        .value
-    )
+    data = summary.set_index(["linkage", "method", "percentile"]).angle_deg
     for j, (kind, win) in enumerate([("N", (110, 130)), ("O", (104, 124))]):
         ax = f.add_axes([0.215 + j * 0.405, 0.22, 0.33, 0.55])
         ax.axvspan(*win, color="#e9efdf", lw=0, zorder=0)
         for i, (m, name) in enumerate([("exp", "Experiment"), *METHODS.items()]):
-            values = [data.loc[kind, name, f"site percentile {v}"] for v in [10, 25, 50, 75, 90]]
+            values = [data.loc[kind, name, v] for v in [10, 25, 50, 75, 90]]
             color = INK if m == "exp" else COLORS[m]
             ax.hlines(i, values[0], values[4], color=color, lw=1.05, zorder=2)
             ax.hlines(i, values[1], values[3], color=color, lw=3.15, zorder=3)
@@ -175,18 +162,14 @@ def panel_c(summary):
     return f
 
 
-def panel_d(stats, raw):
+def panel_d(raw):
     f = panel("D", "Attachment geometry and glycan placement")
-    means = (
-        stats[
-            (stats.subset == "Asn–GlcNAc disaccharides")
-            & (stats.statistic == "sequence-weighted mean")
-        ]
-        .set_index(["method", "metric"])
-        .value
-    )
+    metrics = ["angle_error_deg", "sidechain_RMSD_A", "local_glycan_RMSD_A"]
+    # Average across sites per chain, then across chains with an identical sequence.
+    chain_means = raw.groupby(["method", "sequence", "pdb_id", "protein_chain"])[metrics].mean()
+    means = chain_means.groupby(["method", "sequence"]).mean().groupby("method").mean()
     for j, (metric, label) in enumerate(
-        [("root_angle_abs", "Bond-angle error (°)"), ("sidechain_local", "Side-chain RMSD (Å)")]
+        [("angle_error_deg", "Bond-angle error (°)"), ("sidechain_RMSD_A", "Side-chain RMSD (Å)")]
     ):
         ax = f.add_axes([0.156 + 0.421 * j, 0.28, 0.35, 0.49])
         for m, marker in [("sweetfold", "^"), ("af3", "o")]:
@@ -194,7 +177,7 @@ def panel_d(stats, raw):
             if m == "af3":
                 ax.scatter(
                     frame[metric],
-                    frame.glycan_local,
+                    frame.local_glycan_RMSD_A,
                     marker=marker,
                     s=8.2,
                     facecolor=COLORS[m],
@@ -205,7 +188,7 @@ def panel_d(stats, raw):
             else:
                 ax.scatter(
                     frame[metric],
-                    frame.glycan_local,
+                    frame.local_glycan_RMSD_A,
                     marker=marker,
                     s=10.5,
                     facecolors="none",
@@ -217,7 +200,7 @@ def panel_d(stats, raw):
         for m in D_METHODS:
             ax.scatter(
                 means.loc[METHODS[m], metric],
-                means.loc[METHODS[m], "glycan_local"],
+                means.loc[METHODS[m], "local_glycan_RMSD_A"],
                 marker="D",
                 s=42,
                 facecolor=COLORS[m],
@@ -273,23 +256,19 @@ def panel_d(stats, raw):
     return f
 
 
-def torsions(tag, table, summary):
+def torsions(tag, table):
     link, title = next((key, title) for key, (letter, title) in LINKS.items() if letter == tag)
-    medians = summary[summary.statistic == "median"].set_index(["subset", "method", "metric"])
+    rows = table.set_index(["linkage", "method", "torsion"])
     f = panel(tag, title, size=SUPP_SIZE)
     ax = f.add_axes([0.228, 0.191, 0.69, 0.615])
-    for i, (m, public) in enumerate(METHODS.items()):
+    for i, public in enumerate(METHODS.values()):
         y = 5 - i
         ax.hlines(y, 0, 180, color="#c4ced1", lw=0.65)
         for angle, sign in [("phi", 1), ("psi", -1)]:
-            df = table.query("link_type == @link and method == @m and angle == @angle").sort_values(
-                "left_degrees"
-            )
-            row = medians.loc[link, public, angle + "_absolute_periodic_error"]
-            n = int(row.n)
-            assert len(df) == 18 and df["count"].sum() == n and (df.valid_edges == n).all()
-            center = (df.left_degrees.to_numpy() + df.right_degrees.to_numpy()) / 2
-            freq = df["count"].to_numpy() / n
+            row = rows.loc[link, public, angle]
+            counts = row[[f"n_{lo}_{lo + 10}" for lo in range(0, 180, 10)]].to_numpy(dtype=float)
+            center = np.arange(5, 180, 10)
+            freq = counts / counts.sum()
             x = np.r_[0, center, 180]
             ax.fill_between(
                 x,
@@ -301,7 +280,7 @@ def torsions(tag, table, summary):
                 zorder=2,
             )
             ax.scatter(
-                row.value,
+                row.median_deg,
                 y + sign * 0.09,
                 s=17,
                 facecolors="white",

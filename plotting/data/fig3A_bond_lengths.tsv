@@ -1,0 +1,19 @@
+method	metric	n	percent
+AlphaFold 3	root_supported	884	100
+AlphaFold 3	internal_supported	947	100
+AlphaFold 3	tree_supported	400	100
+Boltz-2	root_supported	884	100
+Boltz-2	internal_supported	947	100
+Boltz-2	tree_supported	400	100
+Chai-1	root_supported	884	99.661458
+Chai-1	internal_supported	947	100
+Chai-1	tree_supported	400	100
+Protenix	root_supported	884	98.710937
+Protenix	internal_supported	947	100
+Protenix	tree_supported	400	100
+RFAA	root_supported	884	99.573317
+RFAA	internal_supported	947	99.17998
+RFAA	tree_supported	400	96.192333
+SweetFold	root_supported	884	100
+SweetFold	internal_supported	947	100
+SweetFold	tree_supported	400	100

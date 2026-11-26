@@ -3,7 +3,7 @@
 import numpy as np
 from matplotlib.colors import LinearSegmentedColormap, to_hex
 from matplotlib.patches import Rectangle, Patch
-from style import METHODS, INK, GRID, panel
+from .style import METHODS, INK, GRID, panel
 
 OUTCOMES = {
     "chem_pass_geo_pass": ("Both pass", "#246d67"),
@@ -35,18 +35,18 @@ def methods(ax):
     ax.spines["left"].set_visible(False)
 
 
-def get(data, method, **query):
+def get(data, method, column, **query):
     rows = data[data.method == method]
     for k, v in query.items():
         rows = rows[rows[k] == v]
     assert len(rows) == 1
-    return rows.iloc[0]["value"]
+    return rows.iloc[0][column]
 
 
 def a(data):
     f = panel("A", TITLES["A"])
     for j, (test, col) in enumerate([("A", "#28766c"), ("B", "#67799e")]):
-        (num,) = data.loc[data.test_set == test, "n"].unique()
+        (num,) = data.loc[data.test_set == test, "total_sites"].unique()
         ax = f.add_axes([0.211 + j * 0.386, 0.232, 0.331, 0.573])
         methods(ax)
         if j:
@@ -56,7 +56,7 @@ def a(data):
         ax.set_axisbelow(True)
         ax.grid(axis="x", lw=0.6, color=GRID)
         for i, m in enumerate(METHODS.values()):
-            val = int(get(data, m, test_set=test))
+            val = int(get(data, m, "sites_outside_range", test_set=test))
             ax.plot([0, val], [i, i], color=col, lw=1.8, zorder=2)
             ax.plot(
                 val,
@@ -80,7 +80,7 @@ def b(data):
     methods(ax)
     left = np.zeros(6)
     for key, (label, col) in OUTCOMES.items():
-        val = np.array([get(data, m, metric=key) for m in METHODS.values()])
+        val = np.array([get(data, m, "percent", outcome=key) for m in METHODS.values()])
         ax.barh(range(6), val, height=0.70, left=left, color=col, edgecolor="white", lw=0.45)
         left += val
     assert np.allclose(left, 100)
@@ -116,7 +116,7 @@ def c(data):
     ax.set_xticks(range(5), METRICS.values())
     for i, m in enumerate(METHODS.values()):
         for j, k in enumerate(METRICS):
-            value = get(data, m, metric=k)
+            value = get(data, m, "percent", metric=k)
             fc = to_hex(HEAT(min(value / 75, 1)))
             ax.add_patch(
                 Rectangle((j - 0.487, i - 0.459), 0.974, 0.918, facecolor=fc, edgecolor="none")
