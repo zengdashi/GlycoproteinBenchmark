@@ -1,0 +1,13 @@
+panel	test_set	method	metric	statistic	value	raw_numerator_sites	raw_denominator_sites	n_inputs	n_protein_sequences
+A	A	AlphaFold 3	root_bond_outside_1.1_to_1.9_A	raw site count	0	0	884	327	256
+A	B	AlphaFold 3	root_bond_outside_1.1_to_1.9_A	raw site count	0	0	171	57	47
+A	A	Boltz-2	root_bond_outside_1.1_to_1.9_A	raw site count	0	0	884	327	256
+A	B	Boltz-2	root_bond_outside_1.1_to_1.9_A	raw site count	0	0	171	57	47
+A	A	Chai-1	root_bond_outside_1.1_to_1.9_A	raw site count	3	3	884	327	256
+A	B	Chai-1	root_bond_outside_1.1_to_1.9_A	raw site count	0	0	171	57	47
+A	A	Protenix	root_bond_outside_1.1_to_1.9_A	raw site count	8	8	884	327	256
+A	B	Protenix	root_bond_outside_1.1_to_1.9_A	raw site count	2	2	171	57	47
+A	A	RFAA	root_bond_outside_1.1_to_1.9_A	raw site count	5	5	884	327	256
+A	B	RFAA	root_bond_outside_1.1_to_1.9_A	raw site count	4	4	171	57	47
+A	A	SweetFold	root_bond_outside_1.1_to_1.9_A	raw site count	0	0	884	327	256
+A	B	SweetFold	root_bond_outside_1.1_to_1.9_A	raw site count	0	0	171	57	47

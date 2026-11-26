@@ -1,0 +1,7 @@
+method	version_or_commit	checkpoint	recycles	seed	candidates	diffusion_steps	ranking_field
+AlphaFold 3	3.0.4	af3.bin	10	1	5	200	ranking_score
+Boltz-2	2.2.1	boltz2_conf.ckpt	3	1	5	200	confidence_score
+Chai-1	0.6.1	models_v2	3	1	5	200	aggregate_score
+Protenix	0.5.0+pxd	protenix_base_default_v0.5.0.pt	10	1	5	200	ranking_score
+RFAA	d69ab3a73f8ede31a4cc005fbc076a341d848469	RFAA_paper_weights.pt	4	1	5	NA	mean_predicted_lddt
+SweetFold	9d7131de0b2d10d60ea24f713b5eff84bd1e519f	boltz1_glycan_epoch_23.ckpt	3	1	5	200	confidence_score

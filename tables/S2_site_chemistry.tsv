@@ -1,0 +1,311 @@
+test_set	method	subset	metric	statistic	value	unit	ci95_low	ci95_high	n	observation_unit	n_inputs	n_sequences	raw_numerator
+A	AlphaFold 3	All	root_supported	sequence-weighted mean	100	%	NA	NA	884	protein–sugar bonds	327	256	NA
+A	AlphaFold 3	All	internal_supported	sequence-weighted mean	100	%	NA	NA	947	sugar–sugar bonds	218	171	NA
+A	AlphaFold 3	All	tree_supported	sequence-weighted mean	100	%	NA	NA	400	oligosaccharide sites	218	171	NA
+A	AlphaFold 3	All	anomer_correct	sequence-weighted mean	99.027244	%	NA	NA	1831	anomeric centers	327	256	NA
+A	AlphaFold 3	All	ring_agreement	sequence-weighted mean	90.71895394	%	NA	NA	1827	classifiable rings	327	256	NA
+A	AlphaFold 3	All	chemical_extended_local_pass_fraction	sequence-weighted mean	83.58832151	%	NA	NA	884	glycosylation sites	327	256	NA
+A	Boltz-2	All	root_supported	sequence-weighted mean	100	%	NA	NA	884	protein–sugar bonds	327	256	NA
+A	Boltz-2	All	internal_supported	sequence-weighted mean	100	%	NA	NA	947	sugar–sugar bonds	218	171	NA
+A	Boltz-2	All	tree_supported	sequence-weighted mean	100	%	NA	NA	400	oligosaccharide sites	218	171	NA
+A	Boltz-2	All	anomer_correct	sequence-weighted mean	100	%	NA	NA	1831	anomeric centers	327	256	NA
+A	Boltz-2	All	ring_agreement	sequence-weighted mean	80.46946176	%	NA	NA	1827	classifiable rings	327	256	NA
+A	Boltz-2	All	chemical_extended_local_pass_fraction	sequence-weighted mean	85.2046002	%	NA	NA	884	glycosylation sites	327	256	NA
+A	Chai-1	All	root_supported	sequence-weighted mean	99.661458	%	NA	NA	884	protein–sugar bonds	327	256	NA
+A	Chai-1	All	internal_supported	sequence-weighted mean	100	%	NA	NA	947	sugar–sugar bonds	218	171	NA
+A	Chai-1	All	tree_supported	sequence-weighted mean	100	%	NA	NA	400	oligosaccharide sites	218	171	NA
+A	Chai-1	All	anomer_correct	sequence-weighted mean	98.094537	%	NA	NA	1831	anomeric centers	327	256	NA
+A	Chai-1	All	ring_agreement	sequence-weighted mean	91.04400974	%	NA	NA	1827	classifiable rings	327	256	NA
+A	Chai-1	All	chemical_extended_local_pass_fraction	sequence-weighted mean	86.18054743	%	NA	NA	884	glycosylation sites	327	256	NA
+A	Protenix	All	root_supported	sequence-weighted mean	98.710937	%	NA	NA	884	protein–sugar bonds	327	256	NA
+A	Protenix	All	internal_supported	sequence-weighted mean	100	%	NA	NA	947	sugar–sugar bonds	218	171	NA
+A	Protenix	All	tree_supported	sequence-weighted mean	100	%	NA	NA	400	oligosaccharide sites	218	171	NA
+A	Protenix	All	anomer_correct	sequence-weighted mean	98.816403	%	NA	NA	1831	anomeric centers	327	256	NA
+A	Protenix	All	ring_agreement	sequence-weighted mean	90.99006629	%	NA	NA	1827	classifiable rings	327	256	NA
+A	Protenix	All	chemical_extended_local_pass_fraction	sequence-weighted mean	84.28061088	%	NA	NA	884	glycosylation sites	327	256	NA
+A	RFAA	All	root_supported	sequence-weighted mean	99.573317	%	NA	NA	884	protein–sugar bonds	327	256	NA
+A	RFAA	All	internal_supported	sequence-weighted mean	99.17998	%	NA	NA	947	sugar–sugar bonds	218	171	NA
+A	RFAA	All	tree_supported	sequence-weighted mean	96.192333	%	NA	NA	400	oligosaccharide sites	218	171	NA
+A	RFAA	All	anomer_correct	sequence-weighted mean	94.429668	%	NA	NA	1831	anomeric centers	327	256	NA
+A	RFAA	All	ring_agreement	sequence-weighted mean	78.44382201	%	NA	NA	1827	classifiable rings	327	256	NA
+A	RFAA	All	chemical_extended_local_pass_fraction	sequence-weighted mean	25.45262897	%	NA	NA	884	glycosylation sites	327	256	NA
+A	SweetFold	All	root_supported	sequence-weighted mean	100	%	NA	NA	884	protein–sugar bonds	327	256	NA
+A	SweetFold	All	internal_supported	sequence-weighted mean	100	%	NA	NA	947	sugar–sugar bonds	218	171	NA
+A	SweetFold	All	tree_supported	sequence-weighted mean	100	%	NA	NA	400	oligosaccharide sites	218	171	NA
+A	SweetFold	All	anomer_correct	sequence-weighted mean	99.335631	%	NA	NA	1831	anomeric centers	327	256	NA
+A	SweetFold	All	ring_agreement	sequence-weighted mean	90.80482065	%	NA	NA	1827	classifiable rings	327	256	NA
+A	SweetFold	All	chemical_extended_local_pass_fraction	sequence-weighted mean	70.96424344	%	NA	NA	884	glycosylation sites	327	256	NA
+A	Experiment	N	attachment_valence_angle	site percentile 10	118.931313	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	Experiment	N	attachment_valence_angle	site percentile 25	120.7123275	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	Experiment	N	attachment_valence_angle	site percentile 50	122.376145	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	Experiment	N	attachment_valence_angle	site percentile 75	124.508255	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	Experiment	N	attachment_valence_angle	site percentile 90	128.447926	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	AlphaFold 3	N	attachment_valence_angle	site percentile 10	151.523152	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	AlphaFold 3	N	attachment_valence_angle	site percentile 25	155.5464875	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	AlphaFold 3	N	attachment_valence_angle	site percentile 50	159.183575	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	AlphaFold 3	N	attachment_valence_angle	site percentile 75	162.927175	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	AlphaFold 3	N	attachment_valence_angle	site percentile 90	167.066838	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	Boltz-2	N	attachment_valence_angle	site percentile 10	107.902646	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	Boltz-2	N	attachment_valence_angle	site percentile 25	112.8613825	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	Boltz-2	N	attachment_valence_angle	site percentile 50	118.94803	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	Boltz-2	N	attachment_valence_angle	site percentile 75	124.6772425	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	Boltz-2	N	attachment_valence_angle	site percentile 90	130.283528	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	Chai-1	N	attachment_valence_angle	site percentile 10	121.135582	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	Chai-1	N	attachment_valence_angle	site percentile 25	127.01118	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	Chai-1	N	attachment_valence_angle	site percentile 50	132.779615	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	Chai-1	N	attachment_valence_angle	site percentile 75	138.315025	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	Chai-1	N	attachment_valence_angle	site percentile 90	143.665069	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	Protenix	N	attachment_valence_angle	site percentile 10	107.453844	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	Protenix	N	attachment_valence_angle	site percentile 25	112.333685	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	Protenix	N	attachment_valence_angle	site percentile 50	118.20531	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	Protenix	N	attachment_valence_angle	site percentile 75	123.9991475	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	Protenix	N	attachment_valence_angle	site percentile 90	129.076317	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	RFAA	N	attachment_valence_angle	site percentile 10	110.674808	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	RFAA	N	attachment_valence_angle	site percentile 25	115.7270025	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	RFAA	N	attachment_valence_angle	site percentile 50	118.92068	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	RFAA	N	attachment_valence_angle	site percentile 75	121.3848825	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	RFAA	N	attachment_valence_angle	site percentile 90	126.75124	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	SweetFold	N	attachment_valence_angle	site percentile 10	117.641363	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	SweetFold	N	attachment_valence_angle	site percentile 25	119.7496675	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	SweetFold	N	attachment_valence_angle	site percentile 50	122.259005	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	SweetFold	N	attachment_valence_angle	site percentile 75	125.639585	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	SweetFold	N	attachment_valence_angle	site percentile 90	129.907634	degrees	NA	NA	844	glycosylation sites	316	245	NA
+A	Experiment	O	attachment_valence_angle	site percentile 10	108.374032	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	Experiment	O	attachment_valence_angle	site percentile 25	109.61694	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	Experiment	O	attachment_valence_angle	site percentile 50	111.77936	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	Experiment	O	attachment_valence_angle	site percentile 75	114.6441225	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	Experiment	O	attachment_valence_angle	site percentile 90	116.569013	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	AlphaFold 3	O	attachment_valence_angle	site percentile 10	128.410947	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	AlphaFold 3	O	attachment_valence_angle	site percentile 25	136.7380325	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	AlphaFold 3	O	attachment_valence_angle	site percentile 50	145.20522	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	AlphaFold 3	O	attachment_valence_angle	site percentile 75	150.382065	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	AlphaFold 3	O	attachment_valence_angle	site percentile 90	157.525249	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	Boltz-2	O	attachment_valence_angle	site percentile 10	92.1794384	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	Boltz-2	O	attachment_valence_angle	site percentile 25	103.96725	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	Boltz-2	O	attachment_valence_angle	site percentile 50	123.157915	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	Boltz-2	O	attachment_valence_angle	site percentile 75	139.1540175	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	Boltz-2	O	attachment_valence_angle	site percentile 90	149.906105	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	Chai-1	O	attachment_valence_angle	site percentile 10	117.919089	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	Chai-1	O	attachment_valence_angle	site percentile 25	123.4543175	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	Chai-1	O	attachment_valence_angle	site percentile 50	139.655305	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	Chai-1	O	attachment_valence_angle	site percentile 75	154.4605375	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	Chai-1	O	attachment_valence_angle	site percentile 90	163.776815	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	Protenix	O	attachment_valence_angle	site percentile 10	95.2621179	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	Protenix	O	attachment_valence_angle	site percentile 25	107.4414775	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	Protenix	O	attachment_valence_angle	site percentile 50	118.658825	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	Protenix	O	attachment_valence_angle	site percentile 75	127.659345	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	Protenix	O	attachment_valence_angle	site percentile 90	133.719181	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	RFAA	O	attachment_valence_angle	site percentile 10	109.253483	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	RFAA	O	attachment_valence_angle	site percentile 25	112.7926575	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	RFAA	O	attachment_valence_angle	site percentile 50	118.228925	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	RFAA	O	attachment_valence_angle	site percentile 75	124.2677725	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	RFAA	O	attachment_valence_angle	site percentile 90	129.384983	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	SweetFold	O	attachment_valence_angle	site percentile 10	109.965383	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	SweetFold	O	attachment_valence_angle	site percentile 25	114.1272575	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	SweetFold	O	attachment_valence_angle	site percentile 50	118.261005	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	SweetFold	O	attachment_valence_angle	site percentile 75	126.6631625	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	SweetFold	O	attachment_valence_angle	site percentile 90	136.856362	degrees	NA	NA	40	glycosylation sites	17	16	NA
+A	AlphaFold 3	Asn–GlcNAc disaccharides	sidechain_local	sequence-weighted mean	1.672353714	angstrom	NA	NA	204	glycosylation sites	134	115	NA
+A	AlphaFold 3	Asn–GlcNAc disaccharides	root_local	sequence-weighted mean	3.249688819	angstrom	NA	NA	204	glycosylation sites	134	115	NA
+A	AlphaFold 3	Asn–GlcNAc disaccharides	glycan_local	sequence-weighted mean	4.229892131	angstrom	NA	NA	204	glycosylation sites	134	115	NA
+A	AlphaFold 3	Asn–GlcNAc disaccharides	root_angle_abs	sequence-weighted mean	35.94051667	degrees	NA	NA	204	glycosylation sites	134	115	NA
+A	AlphaFold 3	Asn–GlcNAc disaccharides	sidechain_local vs glycan_local	weighted Spearman rho	0.796469348	unitless	NA	NA	204	glycosylation sites	134	115	NA
+A	AlphaFold 3	Asn–GlcNAc disaccharides	root_angle_abs vs glycan_local	weighted Spearman rho	-0.01026458183	unitless	NA	NA	204	glycosylation sites	134	115	NA
+A	SweetFold	Asn–GlcNAc disaccharides	sidechain_local	sequence-weighted mean	2.19788282	angstrom	NA	NA	204	glycosylation sites	134	115	NA
+A	SweetFold	Asn–GlcNAc disaccharides	root_local	sequence-weighted mean	4.274678541	angstrom	NA	NA	204	glycosylation sites	134	115	NA
+A	SweetFold	Asn–GlcNAc disaccharides	glycan_local	sequence-weighted mean	5.725928437	angstrom	NA	NA	204	glycosylation sites	134	115	NA
+A	SweetFold	Asn–GlcNAc disaccharides	root_angle_abs	sequence-weighted mean	4.337675939	degrees	NA	NA	204	glycosylation sites	134	115	NA
+A	SweetFold	Asn–GlcNAc disaccharides	sidechain_local vs glycan_local	weighted Spearman rho	0.8204344731	unitless	NA	NA	204	glycosylation sites	134	115	NA
+A	SweetFold	Asn–GlcNAc disaccharides	root_angle_abs vs glycan_local	weighted Spearman rho	0.0735715167	unitless	NA	NA	204	glycosylation sites	134	115	NA
+A	AlphaFold 3	all sites	root_bond_outside_1.1_to_1.9_A	count	0	sites	NA	NA	884	sites	327	256	NA
+B	AlphaFold 3	all sites	root_bond_outside_1.1_to_1.9_A	count	0	sites	NA	NA	171	sites	57	47	NA
+A	Boltz-2	all sites	root_bond_outside_1.1_to_1.9_A	count	0	sites	NA	NA	884	sites	327	256	NA
+B	Boltz-2	all sites	root_bond_outside_1.1_to_1.9_A	count	0	sites	NA	NA	171	sites	57	47	NA
+A	Chai-1	all sites	root_bond_outside_1.1_to_1.9_A	count	3	sites	NA	NA	884	sites	327	256	NA
+B	Chai-1	all sites	root_bond_outside_1.1_to_1.9_A	count	0	sites	NA	NA	171	sites	57	47	NA
+A	Protenix	all sites	root_bond_outside_1.1_to_1.9_A	count	8	sites	NA	NA	884	sites	327	256	NA
+B	Protenix	all sites	root_bond_outside_1.1_to_1.9_A	count	2	sites	NA	NA	171	sites	57	47	NA
+A	RFAA	all sites	root_bond_outside_1.1_to_1.9_A	count	5	sites	NA	NA	884	sites	327	256	NA
+B	RFAA	all sites	root_bond_outside_1.1_to_1.9_A	count	4	sites	NA	NA	171	sites	57	47	NA
+A	SweetFold	all sites	root_bond_outside_1.1_to_1.9_A	count	0	sites	NA	NA	884	sites	327	256	NA
+B	SweetFold	all sites	root_bond_outside_1.1_to_1.9_A	count	0	sites	NA	NA	171	sites	57	47	NA
+A	AlphaFold 3	sites with a chemistry or positioning error	fail_root	sequence-weighted mean	0	%	0	0	732	sites	302	238	0
+A	AlphaFold 3	sites with a chemistry or positioning error	fail_internal	sequence-weighted mean	0	%	0	0	732	sites	302	238	0
+A	AlphaFold 3	sites with a chemistry or positioning error	fail_sugar_stereo	sequence-weighted mean	4.5580732	%	2.0284698	7.6596795	732	sites	302	238	27
+A	AlphaFold 3	sites with a chemistry or positioning error	fail_clash	sequence-weighted mean	17.546072	%	13.700882	21.330352	732	sites	302	238	117
+A	AlphaFold 3	sites with a chemistry or positioning error	fail_sugar_stereo_and_clash	sequence-weighted mean	1.5388655	%	0.25913986	3.1233899	732	sites	302	238	9
+A	Boltz-2	sites with a chemistry or positioning error	fail_root	sequence-weighted mean	0	%	0	0	801	sites	315	247	0
+A	Boltz-2	sites with a chemistry or positioning error	fail_internal	sequence-weighted mean	0	%	0	0	801	sites	315	247	0
+A	Boltz-2	sites with a chemistry or positioning error	fail_sugar_stereo	sequence-weighted mean	0	%	0	0	801	sites	315	247	0
+A	Boltz-2	sites with a chemistry or positioning error	fail_clash	sequence-weighted mean	16.599428	%	12.824448	20.294812	801	sites	315	247	129
+A	Boltz-2	sites with a chemistry or positioning error	fail_sugar_stereo_and_clash	sequence-weighted mean	0	%	0	0	801	sites	315	247	0
+A	Chai-1	sites with a chemistry or positioning error	fail_root	sequence-weighted mean	0.35230352	%	0	0.86964297	768	sites	309	246	3
+A	Chai-1	sites with a chemistry or positioning error	fail_internal	sequence-weighted mean	0	%	0	0	768	sites	309	246	0
+A	Chai-1	sites with a chemistry or positioning error	fail_sugar_stereo	sequence-weighted mean	3.9869661	%	1.6264038	7.1368144	768	sites	309	246	30
+A	Chai-1	sites with a chemistry or positioning error	fail_clash	sequence-weighted mean	12.842544	%	10.020963	16.028611	768	sites	309	246	99
+A	Chai-1	sites with a chemistry or positioning error	fail_sugar_stereo_and_clash	sequence-weighted mean	0.72880372	%	0.15441057	1.4606778	768	sites	309	246	6
+A	Protenix	sites with a chemistry or positioning error	fail_root	sequence-weighted mean	1.3580247	%	0.40356132	2.4910055	776	sites	310	243	8
+A	Protenix	sites with a chemistry or positioning error	fail_internal	sequence-weighted mean	0	%	0	0	776	sites	310	243	0
+A	Protenix	sites with a chemistry or positioning error	fail_sugar_stereo	sequence-weighted mean	6.4431054	%	2.2029129	12.71926	776	sites	310	243	44
+A	Protenix	sites with a chemistry or positioning error	fail_clash	sequence-weighted mean	11.938076	%	8.8311245	15.420501	776	sites	310	243	92
+A	Protenix	sites with a chemistry or positioning error	fail_sugar_stereo_and_clash	sequence-weighted mean	1.0105167	%	0.29097654	1.8447602	776	sites	310	243	10
+A	RFAA	sites with a chemistry or positioning error	fail_root	sequence-weighted mean	0.43174217	%	0	1.0785707	874	sites	324	253	5
+A	RFAA	sites with a chemistry or positioning error	fail_internal	sequence-weighted mean	2.3495828	%	0.46854083	4.9564883	874	sites	324	253	18
+A	RFAA	sites with a chemistry or positioning error	fail_sugar_stereo	sequence-weighted mean	21.193752	%	16.557428	26.352	874	sites	324	253	294
+A	RFAA	sites with a chemistry or positioning error	fail_clash	sequence-weighted mean	73.795956	%	68.716455	78.445456	874	sites	324	253	701
+A	RFAA	sites with a chemistry or positioning error	fail_sugar_stereo_and_clash	sequence-weighted mean	19.062658	%	14.731939	23.878874	874	sites	324	253	274
+A	SweetFold	sites with a chemistry or positioning error	fail_root	sequence-weighted mean	0	%	0	0	834	sites	315	249	0
+A	SweetFold	sites with a chemistry or positioning error	fail_internal	sequence-weighted mean	0	%	0	0	834	sites	315	249	0
+A	SweetFold	sites with a chemistry or positioning error	fail_sugar_stereo	sequence-weighted mean	1.4632891	%	0.24440757	2.9911493	834	sites	315	249	14
+A	SweetFold	sites with a chemistry or positioning error	fail_clash	sequence-weighted mean	30.292449	%	25.185109	35.661096	834	sites	315	249	239
+A	SweetFold	sites with a chemistry or positioning error	fail_sugar_stereo_and_clash	sequence-weighted mean	1.0045309	%	0.12763507	2.1701764	834	sites	315	249	9
+B	AlphaFold 3	All	root_supported	sequence-weighted mean	100	%	100	100	171	protein–sugar bonds	57	47	171
+B	AlphaFold 3	All	tree_supported	sequence-weighted mean	100	%	100	100	93	oligosaccharide sites	39	32	93
+B	AlphaFold 3	sites with a chemistry or positioning error	fail_root	sequence-weighted mean	0	%	0	0	131	sites	54	45	0
+B	AlphaFold 3	sites with a chemistry or positioning error	fail_internal	sequence-weighted mean	0	%	0	0	131	sites	54	45	0
+B	AlphaFold 3	sites with a chemistry or positioning error	fail_sugar_stereo	sequence-weighted mean	13.280423	%	1.4278711	23.171769	131	sites	54	45	16
+B	AlphaFold 3	sites with a chemistry or positioning error	fail_clash	sequence-weighted mean	23.407407	%	15.0625	32.249041	131	sites	54	45	25
+B	AlphaFold 3	sites with a chemistry or positioning error	fail_sugar_stereo_and_clash	sequence-weighted mean	4.2962963	%	0	8.8461538	131	sites	54	45	5
+B	AlphaFold 3	All	anomer_correct	sequence-weighted mean	97.444743	%	95.433839	99.619062	476	anomeric centers	57	47	450
+B	AlphaFold 3	All	internal_supported	sequence-weighted mean	100	%	100	100	305	sugar–sugar bonds	39	32	305
+B	Boltz-2	All	root_supported	sequence-weighted mean	100	%	100	100	171	protein–sugar bonds	57	47	171
+B	Boltz-2	All	tree_supported	sequence-weighted mean	100	%	100	100	93	oligosaccharide sites	39	32	93
+B	Boltz-2	sites with a chemistry or positioning error	fail_root	sequence-weighted mean	0	%	0	0	150	sites	55	45	0
+B	Boltz-2	sites with a chemistry or positioning error	fail_internal	sequence-weighted mean	0	%	0	0	150	sites	55	45	0
+B	Boltz-2	sites with a chemistry or positioning error	fail_sugar_stereo	sequence-weighted mean	0	%	0	0	150	sites	55	45	0
+B	Boltz-2	sites with a chemistry or positioning error	fail_clash	sequence-weighted mean	22.873016	%	11.111111	33.413372	150	sites	55	45	32
+B	Boltz-2	sites with a chemistry or positioning error	fail_sugar_stereo_and_clash	sequence-weighted mean	0	%	0	0	150	sites	55	45	0
+B	Boltz-2	All	anomer_correct	sequence-weighted mean	100	%	100	100	476	anomeric centers	57	47	476
+B	Boltz-2	All	internal_supported	sequence-weighted mean	100	%	100	100	305	sugar–sugar bonds	39	32	305
+B	Chai-1	All	root_supported	sequence-weighted mean	100	%	100	100	171	protein–sugar bonds	57	47	171
+B	Chai-1	All	tree_supported	sequence-weighted mean	100	%	100	100	93	oligosaccharide sites	39	32	93
+B	Chai-1	sites with a chemistry or positioning error	fail_root	sequence-weighted mean	0	%	0	0	138	sites	53	45	0
+B	Chai-1	sites with a chemistry or positioning error	fail_internal	sequence-weighted mean	0	%	0	0	138	sites	53	45	0
+B	Chai-1	sites with a chemistry or positioning error	fail_sugar_stereo	sequence-weighted mean	12.650794	%	1.2797619	22.325586	138	sites	53	45	18
+B	Chai-1	sites with a chemistry or positioning error	fail_clash	sequence-weighted mean	13.222222	%	6.9362777	19.561952	138	sites	53	45	22
+B	Chai-1	sites with a chemistry or positioning error	fail_sugar_stereo_and_clash	sequence-weighted mean	1.4444444	%	0	3.145236	138	sites	53	45	3
+B	Chai-1	All	anomer_correct	sequence-weighted mean	93.092977	%	84.729789	99.619062	476	anomeric centers	57	47	447
+B	Chai-1	All	internal_supported	sequence-weighted mean	100	%	100	100	305	sugar–sugar bonds	39	32	305
+B	Protenix	All	root_supported	sequence-weighted mean	98.723404	%	97.03655	100	171	protein–sugar bonds	57	47	169
+B	Protenix	All	tree_supported	sequence-weighted mean	100	%	100	100	93	oligosaccharide sites	39	32	93
+B	Protenix	sites with a chemistry or positioning error	fail_root	sequence-weighted mean	1.3043478	%	0	3.0357143	149	sites	55	46	2
+B	Protenix	sites with a chemistry or positioning error	fail_internal	sequence-weighted mean	0	%	0	0	149	sites	55	46	0
+B	Protenix	sites with a chemistry or positioning error	fail_sugar_stereo	sequence-weighted mean	21.364734	%	0.52552553	44.098448	149	sites	55	46	26
+B	Protenix	sites with a chemistry or positioning error	fail_clash	sequence-weighted mean	13.450656	%	5.803384	22.131178	149	sites	55	46	19
+B	Protenix	sites with a chemistry or positioning error	fail_sugar_stereo_and_clash	sequence-weighted mean	2.5603865	%	0	5.0593602	149	sites	55	46	5
+B	Protenix	All	anomer_correct	sequence-weighted mean	97.771603	%	95.880775	99.809935	476	anomeric centers	57	47	452
+B	Protenix	All	internal_supported	sequence-weighted mean	100	%	100	100	305	sugar–sugar bonds	39	32	305
+B	RFAA	All	root_supported	sequence-weighted mean	97.730496	%	95.408849	100	171	protein–sugar bonds	57	47	167
+B	RFAA	All	tree_supported	sequence-weighted mean	88.333333	%	72.248062	100	93	oligosaccharide sites	39	32	82
+B	RFAA	sites with a chemistry or positioning error	fail_root	sequence-weighted mean	2.3188406	%	0	4.7222222	169	sites	56	46	4
+B	RFAA	sites with a chemistry or positioning error	fail_internal	sequence-weighted mean	7.2463768	%	0	18.181818	169	sites	56	46	11
+B	RFAA	sites with a chemistry or positioning error	fail_sugar_stereo	sequence-weighted mean	31.974638	%	16.008553	46.260806	169	sites	56	46	70
+B	RFAA	sites with a chemistry or positioning error	fail_clash	sequence-weighted mean	72.228261	%	61.041458	84.071673	169	sites	56	46	135
+B	RFAA	sites with a chemistry or positioning error	fail_sugar_stereo_and_clash	sequence-weighted mean	28.07971	%	12.900465	41.259982	169	sites	56	46	66
+B	RFAA	All	anomer_correct	sequence-weighted mean	89.985364	%	84.246204	96.09911	476	anomeric centers	57	47	362
+B	RFAA	All	internal_supported	sequence-weighted mean	97.787397	%	94.934869	100	305	sugar–sugar bonds	39	32	285
+B	SweetFold	All	root_supported	sequence-weighted mean	100	%	100	100	171	protein–sugar bonds	57	47	171
+B	SweetFold	All	tree_supported	sequence-weighted mean	100	%	100	100	93	oligosaccharide sites	39	32	93
+B	SweetFold	sites with a chemistry or positioning error	fail_root	sequence-weighted mean	0	%	0	0	158	sites	54	45	0
+B	SweetFold	sites with a chemistry or positioning error	fail_internal	sequence-weighted mean	0	%	0	0	158	sites	54	45	0
+B	SweetFold	sites with a chemistry or positioning error	fail_sugar_stereo	sequence-weighted mean	4.5925926	%	0	9.5384615	158	sites	54	45	7
+B	SweetFold	sites with a chemistry or positioning error	fail_clash	sequence-weighted mean	36.027337	%	25.520135	48.693377	158	sites	54	45	53
+B	SweetFold	sites with a chemistry or positioning error	fail_sugar_stereo_and_clash	sequence-weighted mean	2.6666667	%	0	5.6678571	158	sites	54	45	4
+B	SweetFold	All	anomer_correct	sequence-weighted mean	97.684791	%	94.557137	100	476	anomeric centers	57	47	469
+B	SweetFold	All	internal_supported	sequence-weighted mean	100	%	100	100	305	sugar–sugar bonds	39	32	305
+B	AlphaFold 3	All	chemical_extended_local_pass_fraction	sequence-weighted mean	72.890070922	%	NA	NA	171	glycosylation sites	57	47	NA
+B	Boltz-2	All	chemical_extended_local_pass_fraction	sequence-weighted mean	79.485815603	%	NA	NA	171	glycosylation sites	57	47	NA
+B	Chai-1	All	chemical_extended_local_pass_fraction	sequence-weighted mean	78.581560284	%	NA	NA	171	glycosylation sites	57	47	NA
+B	Protenix	All	chemical_extended_local_pass_fraction	sequence-weighted mean	69.45035461	%	NA	NA	171	glycosylation sites	57	47	NA
+B	RFAA	All	chemical_extended_local_pass_fraction	sequence-weighted mean	25.283687943	%	NA	NA	171	glycosylation sites	57	47	NA
+B	SweetFold	All	chemical_extended_local_pass_fraction	sequence-weighted mean	66.09929078	%	NA	NA	171	glycosylation sites	57	47	NA
+B	AlphaFold 3	All	ring_agreement	sequence-weighted mean	89.95171692	%	NA	NA	476	classifiable rings	57	47	435
+B	Boltz-2	All	ring_agreement	sequence-weighted mean	72.252311063	%	NA	NA	476	classifiable rings	57	47	277
+B	Chai-1	All	ring_agreement	sequence-weighted mean	91.367623708	%	NA	NA	476	classifiable rings	57	47	440
+B	Protenix	All	ring_agreement	sequence-weighted mean	91.489204255	%	NA	NA	476	classifiable rings	57	47	440
+B	RFAA	All	ring_agreement	sequence-weighted mean	73.857202635	%	NA	NA	476	classifiable rings	57	47	242
+B	SweetFold	All	ring_agreement	sequence-weighted mean	90.064806518	%	NA	NA	476	classifiable rings	57	47	430
+A	AlphaFold 3	NAG|C1|ASN|ND2|root	phi_absolute_periodic_error	median	32.092506	degrees	NA	NA	803	linkages	NA	NA	NA
+A	AlphaFold 3	NAG|C1|ASN|ND2|root	psi_absolute_periodic_error	median	14.121172	degrees	NA	NA	803	linkages	NA	NA	NA
+A	Boltz-2	NAG|C1|ASN|ND2|root	phi_absolute_periodic_error	median	34.5358603867347	degrees	NA	NA	803	linkages	NA	NA	NA
+A	Boltz-2	NAG|C1|ASN|ND2|root	psi_absolute_periodic_error	median	7.110781624513578	degrees	NA	NA	803	linkages	NA	NA	NA
+A	Chai-1	NAG|C1|ASN|ND2|root	phi_absolute_periodic_error	median	36.70236035139487	degrees	NA	NA	803	linkages	NA	NA	NA
+A	Chai-1	NAG|C1|ASN|ND2|root	psi_absolute_periodic_error	median	9.037182629035897	degrees	NA	NA	803	linkages	NA	NA	NA
+A	Protenix	NAG|C1|ASN|ND2|root	phi_absolute_periodic_error	median	26.26486852652235	degrees	NA	NA	803	linkages	NA	NA	NA
+A	Protenix	NAG|C1|ASN|ND2|root	psi_absolute_periodic_error	median	8.585043760157532	degrees	NA	NA	803	linkages	NA	NA	NA
+A	RFAA	NAG|C1|ASN|ND2|root	phi_absolute_periodic_error	median	32.33344499847877	degrees	NA	NA	803	linkages	NA	NA	NA
+A	RFAA	NAG|C1|ASN|ND2|root	psi_absolute_periodic_error	median	9.612692165189628	degrees	NA	NA	803	linkages	NA	NA	NA
+A	SweetFold	NAG|C1|ASN|ND2|root	phi_absolute_periodic_error	median	28.56094015617785	degrees	NA	NA	803	linkages	NA	NA	NA
+A	SweetFold	NAG|C1|ASN|ND2|root	psi_absolute_periodic_error	median	4.581905286713436	degrees	NA	NA	803	linkages	NA	NA	NA
+A	AlphaFold 3	NAG|C1|NAG|O4|interglycan	phi_absolute_periodic_error	median	10.590135	degrees	NA	NA	387	linkages	NA	NA	NA
+A	AlphaFold 3	NAG|C1|NAG|O4|interglycan	psi_absolute_periodic_error	median	10.378612	degrees	NA	NA	387	linkages	NA	NA	NA
+A	Boltz-2	NAG|C1|NAG|O4|interglycan	phi_absolute_periodic_error	median	16.131834100212984	degrees	NA	NA	387	linkages	NA	NA	NA
+A	Boltz-2	NAG|C1|NAG|O4|interglycan	psi_absolute_periodic_error	median	19.46360662503895	degrees	NA	NA	387	linkages	NA	NA	NA
+A	Chai-1	NAG|C1|NAG|O4|interglycan	phi_absolute_periodic_error	median	11.245986042859812	degrees	NA	NA	387	linkages	NA	NA	NA
+A	Chai-1	NAG|C1|NAG|O4|interglycan	psi_absolute_periodic_error	median	11.812369675554606	degrees	NA	NA	387	linkages	NA	NA	NA
+A	Protenix	NAG|C1|NAG|O4|interglycan	phi_absolute_periodic_error	median	11.246177886449885	degrees	NA	NA	387	linkages	NA	NA	NA
+A	Protenix	NAG|C1|NAG|O4|interglycan	psi_absolute_periodic_error	median	11.569848556642029	degrees	NA	NA	387	linkages	NA	NA	NA
+A	RFAA	NAG|C1|NAG|O4|interglycan	phi_absolute_periodic_error	median	15.051206693348973	degrees	NA	NA	387	linkages	NA	NA	NA
+A	RFAA	NAG|C1|NAG|O4|interglycan	psi_absolute_periodic_error	median	15.3215522022723	degrees	NA	NA	387	linkages	NA	NA	NA
+A	SweetFold	NAG|C1|NAG|O4|interglycan	phi_absolute_periodic_error	median	11.425257804096248	degrees	NA	NA	387	linkages	NA	NA	NA
+A	SweetFold	NAG|C1|NAG|O4|interglycan	psi_absolute_periodic_error	median	11.500564505246473	degrees	NA	NA	387	linkages	NA	NA	NA
+A	AlphaFold 3	BMA.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	62.28346	degrees	NA	NA	2	linkages	2	2	NA
+A	AlphaFold 3	FUC.C1>NAG.O6	omega_absolute_periodic_error	sequence-weighted mean	37.676183	degrees	25.241091	51.31965	30	linkages	27	22	NA
+A	AlphaFold 3	MAN.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	81.447452	degrees	63.091602	101.65879	76	linkages	52	37	NA
+A	AlphaFold 3	MAN.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	27.075891	degrees	17.321229	39.911579	26	linkages	14	13	NA
+A	AlphaFold 3	XYP.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	80.872196	degrees	NA	NA	7	linkages	4	4	NA
+A	Boltz-2	BMA.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	94.574228	degrees	NA	NA	2	linkages	2	2	NA
+A	Boltz-2	FUC.C1>NAG.O6	omega_absolute_periodic_error	sequence-weighted mean	41.454426	degrees	24.684454	59.994151	30	linkages	27	22	NA
+A	Boltz-2	MAN.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	99.486178	degrees	86.67576	112.09863	76	linkages	52	37	NA
+A	Boltz-2	MAN.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	110.9522	degrees	85.113434	134.10637	26	linkages	14	13	NA
+A	Boltz-2	XYP.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	66.163039	degrees	NA	NA	7	linkages	4	4	NA
+A	Chai-1	BMA.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	115.38358	degrees	NA	NA	2	linkages	2	2	NA
+A	Chai-1	FUC.C1>NAG.O6	omega_absolute_periodic_error	sequence-weighted mean	34.155977	degrees	18.69334	49.941574	30	linkages	27	22	NA
+A	Chai-1	MAN.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	81.232264	degrees	65.818692	99.697582	76	linkages	52	37	NA
+A	Chai-1	MAN.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	51.716942	degrees	31.867094	81.203283	26	linkages	14	13	NA
+A	Chai-1	XYP.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	99.000663	degrees	NA	NA	7	linkages	4	4	NA
+A	Protenix	BMA.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	105.95668	degrees	NA	NA	2	linkages	2	2	NA
+A	Protenix	FUC.C1>NAG.O6	omega_absolute_periodic_error	sequence-weighted mean	43.689877	degrees	23.963029	65.059309	30	linkages	27	22	NA
+A	Protenix	MAN.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	83.383169	degrees	66.986716	99.354516	76	linkages	52	37	NA
+A	Protenix	MAN.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	47.115019	degrees	25.553001	82.598521	26	linkages	14	13	NA
+A	Protenix	XYP.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	88.484452	degrees	NA	NA	7	linkages	4	4	NA
+A	RFAA	BMA.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	43.708451	degrees	NA	NA	2	linkages	2	2	NA
+A	RFAA	FUC.C1>NAG.O6	omega_absolute_periodic_error	sequence-weighted mean	50.404459	degrees	32.369619	72.374222	30	linkages	27	22	NA
+A	RFAA	MAN.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	85.206813	degrees	69.386843	101.84521	76	linkages	52	37	NA
+A	RFAA	MAN.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	71.816596	degrees	46.859737	89.361563	26	linkages	14	13	NA
+A	RFAA	XYP.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	93.282958	degrees	NA	NA	7	linkages	4	4	NA
+A	SweetFold	BMA.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	88.223388	degrees	NA	NA	2	linkages	2	2	NA
+A	SweetFold	FUC.C1>NAG.O6	omega_absolute_periodic_error	sequence-weighted mean	35.927521	degrees	23.994381	48.961693	30	linkages	27	22	NA
+A	SweetFold	MAN.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	76.777673	degrees	62.448145	90.267709	76	linkages	52	37	NA
+A	SweetFold	MAN.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	30.047481	degrees	19.440999	45.294687	26	linkages	14	13	NA
+A	SweetFold	XYP.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	113.49503	degrees	NA	NA	7	linkages	4	4	NA
+B	AlphaFold 3	BMA.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	12.509822	degrees	NA	NA	1	linkages	1	1	NA
+B	AlphaFold 3	FUC.C1>NAG.O6	omega_absolute_periodic_error	sequence-weighted mean	64.701272	degrees	20.953332	97.412501	6	linkages	4	3	NA
+B	AlphaFold 3	MAN.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	70.993977	degrees	33.683879	130.55105	24	linkages	11	10	NA
+B	AlphaFold 3	MAN.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	24.120446	degrees	NA	NA	14	linkages	5	5	NA
+B	AlphaFold 3	XYP.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	80.872196	degrees	NA	NA	7	linkages	4	4	NA
+B	Boltz-2	BMA.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	94.488593	degrees	NA	NA	1	linkages	1	1	NA
+B	Boltz-2	FUC.C1>NAG.O6	omega_absolute_periodic_error	sequence-weighted mean	81.37938	degrees	73.984663	88.822745	6	linkages	4	3	NA
+B	Boltz-2	MAN.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	89.283944	degrees	65.624997	109.22213	24	linkages	11	10	NA
+B	Boltz-2	MAN.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	125.50686	degrees	NA	NA	14	linkages	5	5	NA
+B	Boltz-2	XYP.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	66.163039	degrees	NA	NA	7	linkages	4	4	NA
+B	Chai-1	BMA.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	86.9743	degrees	NA	NA	1	linkages	1	1	NA
+B	Chai-1	FUC.C1>NAG.O6	omega_absolute_periodic_error	sequence-weighted mean	63.899529	degrees	26.297889	90.688348	6	linkages	4	3	NA
+B	Chai-1	MAN.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	66.015648	degrees	39.820143	107.76658	24	linkages	11	10	NA
+B	Chai-1	MAN.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	27.933044	degrees	NA	NA	14	linkages	5	5	NA
+B	Chai-1	XYP.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	99.000663	degrees	NA	NA	7	linkages	4	4	NA
+B	Protenix	BMA.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	94.258585	degrees	NA	NA	1	linkages	1	1	NA
+B	Protenix	FUC.C1>NAG.O6	omega_absolute_periodic_error	sequence-weighted mean	64.653417	degrees	32.303262	89.339434	6	linkages	4	3	NA
+B	Protenix	MAN.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	72.642079	degrees	42.356757	113.89102	24	linkages	11	10	NA
+B	Protenix	MAN.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	20.69674	degrees	NA	NA	14	linkages	5	5	NA
+B	Protenix	XYP.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	88.484452	degrees	NA	NA	7	linkages	4	4	NA
+B	RFAA	BMA.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	19.124293	degrees	NA	NA	1	linkages	1	1	NA
+B	RFAA	FUC.C1>NAG.O6	omega_absolute_periodic_error	sequence-weighted mean	80.634715	degrees	30.133743	139.46034	6	linkages	4	3	NA
+B	RFAA	MAN.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	58.91995	degrees	27.238406	86.859817	24	linkages	11	10	NA
+B	RFAA	MAN.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	70.759881	degrees	NA	NA	14	linkages	5	5	NA
+B	RFAA	XYP.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	93.282958	degrees	NA	NA	7	linkages	4	4	NA
+B	SweetFold	BMA.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	67.105035	degrees	NA	NA	1	linkages	1	1	NA
+B	SweetFold	FUC.C1>NAG.O6	omega_absolute_periodic_error	sequence-weighted mean	63.692092	degrees	28.430922	92.397682	6	linkages	4	3	NA
+B	SweetFold	MAN.C1>BMA.O6	omega_absolute_periodic_error	sequence-weighted mean	55.676762	degrees	29.671309	87.352865	24	linkages	11	10	NA
+B	SweetFold	MAN.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	23.560738	degrees	NA	NA	14	linkages	5	5	NA
+B	SweetFold	XYP.C1>MAN.O6	omega_absolute_periodic_error	sequence-weighted mean	113.49503	degrees	NA	NA	7	linkages	4	4	NA
